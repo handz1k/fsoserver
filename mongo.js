@@ -13,7 +13,7 @@ mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
   name: String,
-  number: String,x
+  number: String,
 })
 
 const Person = mongoose.model('Person', personSchema)
@@ -32,8 +32,8 @@ if (process.argv.length < 4) {
     })
     mongoose.connection.close()
   })
-} else {  
-  person.save().then(result => {
+} else {
+  person.save().then(() => {
     console.log(`added ${person.name} number ${person.number} to phonebook`)
     mongoose.connection.close()
   })
